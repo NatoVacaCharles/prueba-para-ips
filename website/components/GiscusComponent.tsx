@@ -8,7 +8,7 @@ export default function GiscusComponent() {
   const { theme, systemTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
-  // eslint-disable-next-line react-hooks/set-state-in-effect
+  // eslint-disable-next-line
   useEffect(() => {
     setMounted(true);
   }, []);

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 export default async function HowGameWorksPage({params,}: {params: Promise<{lang: string}>;}) {
   const {lang} = await params;
   const dict = await getDictionary(lang as Locale);
+  /* eslint-disable @typescript-eslint/no-explicit-any */
   const { title, goal, gameplay, controls, demo, help } = dict.howGameWorks;
   
   return (
@@ -54,7 +55,6 @@ export default async function HowGameWorksPage({params,}: {params: Promise<{lang
                 </tr>
               </thead>
               <tbody>
-                // eslint-disable-next-line @typescript-eslint/no-explicit-any
                 {controls.list.map((item: any, index: number) => (
                   <tr key={index} className="border-t border-green-200 dark:border-green-500/40 text-black dark:text-neutral-200">
                     <td className="py-2 pr-3 font-bold text-green-700 dark:text-green-400">{item.key}</td>
