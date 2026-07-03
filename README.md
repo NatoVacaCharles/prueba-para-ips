@@ -6,3 +6,4 @@ Se ejecutarán pruebas para que todo funcione correctamente
 Se añadió en el plugin de pmd
 <targetJdk>21</targetJdk>
 <typeResolution>false</typeResolution>
+xd
