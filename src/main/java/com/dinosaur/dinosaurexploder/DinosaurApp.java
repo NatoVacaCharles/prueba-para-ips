@@ -23,6 +23,7 @@ public class DinosaurApp extends GameApplication {
   DinosaurController controller = new DinosaurController();
   private AchievementManager achievementManager;
 
+  /* No se añadió nada pero se quiere comprobar como funciona toda la nota */
   /** Summary : This method for the setting the Game GUI Parameters : GameSettings */
   @Override
   protected void initSettings(GameSettings settings) {
