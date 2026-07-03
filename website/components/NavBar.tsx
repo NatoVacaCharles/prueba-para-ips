@@ -13,6 +13,7 @@ import { FaGithub } from "react-icons/fa";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function NavBar({ lang, dict }: { lang: string; dict: any }) {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();

@@ -9,6 +9,7 @@ import { getDictionary } from "@/getDictionary";
 
 export default async function Home({params}: {params: Promise<{lang: string}>}) {
   const {lang} = await params;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const dict = await getDictionary(lang as any);
 
   return (
