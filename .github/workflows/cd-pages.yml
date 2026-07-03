@@ -77,13 +77,6 @@ jobs:
             cp docs-src/index.html docs/index.html
           fi
 
-      - name: Subir artefacto de documentación
-        uses: actions/upload-artifact@v4
-        with:
-          name: sprint-docs
-          path: docs/
-          retention-days: 1
-
   # --------------------------------------------------------
   # JOB 2: Generar Burndown Chart automático
   # --------------------------------------------------------
@@ -123,13 +116,13 @@ jobs:
             --total-points "$TOTAL_POINTS" \
             --output docs/burndown.html || echo "Burndown generation skipped (script not found)"
 
-      - name: Subir burndown
+      - name: Subir todo a Pages
         uses: actions/upload-artifact@v4
         with:
-          name: burndown-chart
+          name: github-pages-artifact # Cambiamos el nombre para que sea único
           path: docs/
           retention-days: 1
-
+          
   # --------------------------------------------------------
   # JOB 3: Desplegar todo en GitHub Pages
   # --------------------------------------------------------
@@ -145,18 +138,11 @@ jobs:
       - name: Checkout del código
         uses: actions/checkout@v4
 
-      - name: Descargar artefacto de documentación
+      - name: Descargar todo el contenido empaquetado
         uses: actions/download-artifact@v4
         with:
-          name: sprint-docs
+          name: github-pages-artifact
           path: ./pages-output
-
-      - name: Descargar burndown chart
-        uses: actions/download-artifact@v4
-        with:
-          name: burndown-chart
-          path: ./pages-output
-        continue-on-error: true
 
       # Si no hay index.html, usar la página del repositorio directamente
       - name: Verificar contenido de páginas
