@@ -70,7 +70,7 @@ jobs:
             cp -r target/site/jacoco/. docs/coverage/
           fi
 
-      # Copiar la página del Sprint (generada por el equipo)
+      # Copiar la página del Sprint
       - name: Copiar página principal del Sprint
         run: |
           if [ -f "docs-src/index.html" ]; then
