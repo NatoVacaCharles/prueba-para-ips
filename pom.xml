@@ -192,6 +192,9 @@
                     <minimumPriority>2</minimumPriority>
                     <!-- printFailingErrors is pretty useful -->
                     <printFailingErrors>true</printFailingErrors>
+
+                    <targetJdk>21</targetJdk>
+                    <typeResolution>false</typeResolution>
                 </configuration>
             </plugin>
 
